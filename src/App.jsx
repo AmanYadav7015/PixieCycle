@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { auth } from "./firebase";
+import { getAuth, signOut } from "firebase/auth";
+import SignIn from "./components/SignIn";
 import Navbar from "./components/HomePage/Navbar";
 import Footer from "./components/HomePage/Footer";
 import Calendar from "./components/Calendar/CalendarPage";
@@ -13,8 +16,26 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
+    
     <section className="flex flex-col items-center justify-center h-screen text-center">
+      <div className="App">
+      {user ? (
+        <h1 className="font-bold text-[#FF949B]" style={{fontSize: "30px"}}>Welcome, {user.displayName}!</h1>
+      ) : (
+        <SignIn />
+      )}
+    </div>
+
       <h2
         className="font-semibold"
         style={{
@@ -39,9 +60,8 @@ const LandingPage = () => {
       </p>
 
       <button
-        className="mt-4 px-6 py-2 text-white transition hover:bg-blue-700"
+        className="mt-4 px-6 py-2 text-white transition hover:bg-blue-700 font-bold"
         style={{
-          fontFamily: "'Heebo', sans-serif",
           backgroundColor: "#FFAFCC",
           width: "350px",
           fontSize: "25px",
@@ -53,9 +73,8 @@ const LandingPage = () => {
       </button>
 
       <button
-        className="mt-4 px-6 py-2 text-white transition hover:bg-blue-700"
+        className="mt-4 px-6 py-2 text-white transition hover:bg-blue-700 font-bold"
         style={{
-          fontFamily: "'Heebo', sans-serif",
           backgroundColor: "#FFAFCC",
           width: "350px",
           fontSize: "25px",
@@ -289,6 +308,12 @@ const HomePage = () => {
 
 
 const App = () => {
+  const auth = getAuth();
+
+  useEffect(() => {
+    signOut(auth);
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col relative">
@@ -302,6 +327,7 @@ const App = () => {
         <div className="relative z-10">
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            {/* <Route path="/" element={<SignIn />} /> */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/home-page" element={<><Navbar /><HomePage /><Footer /></>} />
