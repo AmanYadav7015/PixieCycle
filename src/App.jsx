@@ -47,9 +47,23 @@ const LandingPage = () => {
           fontSize: "25px",
           borderRadius: "25px",
         }}
+        onClick={() => navigate("/signup")}
+      >
+        Sign Up
+      </button>
+
+      <button
+        className="mt-4 px-6 py-2 text-white transition hover:bg-blue-700"
+        style={{
+          fontFamily: "'Heebo', sans-serif",
+          backgroundColor: "#FFAFCC",
+          width: "350px",
+          fontSize: "25px",
+          borderRadius: "25px",
+        }}
         onClick={() => navigate("/login")}
       >
-        Continue
+        Login
       </button>
     </section>
   );
