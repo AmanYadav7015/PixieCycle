@@ -197,10 +197,10 @@ const HomePage = () => {
   const navigate = useNavigate();
   return (
     // <div className="min-h-screen p-4">
-      <div className="mt-40 p-4 rounded-xl shadow-md text-center relative">
-        <h2 className="text-lg font-bold text-[#3C096C]" style={{fontSize: "32px"}}>Period</h2><br></br>
-        <h1 className="text-4xl font-bold text-[#3C096C] mt-2"  style={{fontSize: "90px"}}>4 DAYS LEFT</h1>
-        <p className="text-sm font-bold text-[#3C096C]"  style={{fontSize: "25px"}}>Feb 19 - Next Period</p><br></br>
+      <div className="mt-30 p-4 rounded-xl shadow-md text-center relative">
+        <h2 className="text-lg font-bold text-[#3C096C]" style={{fontSize: "25px"}}>Period</h2><br></br>
+        <h1 className="text-4xl font-bold text-[#3C096C] mt-2"  style={{fontSize: "70px"}}>4 DAYS LEFT</h1>
+        <p className="text-sm text-[#3C096C]"  style={{fontSize: "20px"}}>Feb 19 - Next Period</p><br></br>
         <button className="mt-2 mb-6 px-4 py-2 bg-[#FF5A83] text-white font-bold rounded-full" 
         style={{fontSize: "20px", width: "200px"}}
         onClick={() => navigate("/add-period")}>
