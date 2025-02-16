@@ -1,6 +1,11 @@
 import React from "react";
 import Navbar from "./components/HomePage/Navbar";
 import Footer from "./components/HomePage/Footer";
+import Calendar from "./components/Calendar/CalendarPage";
+import AddPeriod from "./components/AddPeriod/AddPeriod";
+import AnalyticsPage from "./components/AnalyticsPage/AnalyticsPage";
+import Eco from "./components/Eco/Eco";
+import SelfCare from "./components/SelfCare/SelfCare";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -189,13 +194,18 @@ const SignUpPage = () => {
 }
 
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     // <div className="min-h-screen p-4">
       <div className="mt-40 p-4 rounded-xl shadow-md text-center relative">
         <h2 className="text-lg font-bold text-[#3C096C]" style={{fontSize: "32px"}}>Period</h2><br></br>
         <h1 className="text-4xl font-bold text-[#3C096C] mt-2"  style={{fontSize: "90px"}}>4 DAYS LEFT</h1>
         <p className="text-sm font-bold text-[#3C096C]"  style={{fontSize: "25px"}}>Feb 19 - Next Period</p><br></br>
-        <button className="mt-2 mb-6 px-4 py-2 bg-[#FF5A83] text-white font-bold rounded-full" style={{fontSize: "20px", width: "200px"}}>Edit Period</button>
+        <button className="mt-2 mb-6 px-4 py-2 bg-[#FF5A83] text-white font-bold rounded-full" 
+        style={{fontSize: "20px", width: "200px"}}
+        onClick={() => navigate("/add-period")}>
+          Edit Period
+        </button>
       {/* </div> */}
 
       <div className="mt-4 p-4 shadow-md" style={{ backgroundColor: "rgba(224, 195, 252, 0.5)", height: "250px", borderRadius: "57px" }}>
@@ -272,8 +282,12 @@ const App = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/login" element={<LoginPage />} />
             <Route path="/home-page" element={<><Navbar /><HomePage /><Footer /></>} />
+            <Route path="/calendar" element={<><Calendar/><Footer/></>} />
+            <Route path="/add-period" element={<><AddPeriod/><Footer/></>} />
+            <Route path="/self-care" element={<><SelfCare/><Footer/></>} />
+            <Route path="/analytics-page" element={<><AnalyticsPage/><Footer/></>} />
+            <Route path="/eco" element={<><Eco/><Footer/></>} />
           </Routes>
         </div>
       </div>
