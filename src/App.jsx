@@ -244,7 +244,11 @@ const HomePage = () => {
     <div className="mt-4 p-8 bg-[#F4EFFA] shadow-md flex flex-col items-start" style={{ height: "250px", borderRadius: "57px", fontFamily: "'Akshar', sans-serif" }}>
         <h3 className="text-lg font-bold" style={{fontSize: "35px"}}>How is your mood today?</h3>
         <p className="text-sm" style={{fontSize: "19px"}}>Tell us more about your mood to get analysis</p><br></br><br></br>
-        <button className="mt-2 px-4 py-2 bg-[#745A8D] text-white rounded-full font-semibold" style={{fontSize: "19px", width: "160px"}}>Add Mood</button>
+        <button className="mt-2 px-4 py-2 bg-[#745A8D] text-white rounded-full font-semibold" 
+        style={{fontSize: "19px", width: "160px"}}
+        onClick={() => navigate("/self-care")}>
+          Add Mood
+        </button>
       </div>
 
       <div className="mt-4 p-4 bg-[#EAE2F8] shadow-md p-8" style={{ backgroundColor: "rgba(224, 195, 252, 0.5)", height: "700px", borderRadius: "57px" }}>
@@ -272,7 +276,11 @@ const HomePage = () => {
       <div className="mt-4 mb-15 p-8 bg-[#F4EFFA] shadow-md flex flex-col items-start" style={{ height: "250px", borderRadius: "57px", fontFamily: "'Akshar', sans-serif" }}>
         <h3 className="text-lg font-bold" style={{fontSize: "35px"}}>How are you feeling today?</h3>
         <p className="text-sm" style={{fontSize: "19px"}}>Tell us more about your body to get analysis</p><br></br><br></br>
-        <button className="mt-2 px-4 py-2 bg-[#745A8D] text-white rounded-full font-semibold" style={{fontSize: "19px", width: "240px"}}>Add Symptom</button>
+        <button className="mt-2 px-4 py-2 bg-[#745A8D] text-white rounded-full font-semibold" 
+        style={{fontSize: "19px", width: "240px"}}
+        onClick={() => navigate("/self-care")}>
+          Add Symptom
+        </button>
       </div>
 
     </div>
