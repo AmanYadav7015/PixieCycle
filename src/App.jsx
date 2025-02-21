@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "./firebase";
+import { auth,actionCodeSettings } from "./firebase";
 import { getAuth, signOut } from "firebase/auth";
 import SignIn from "./components/SignIn";
 import Navbar from "./components/HomePage/Navbar";
@@ -12,6 +12,7 @@ import SelfCare from "./components/SelfCare/SelfCare";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, sendSignInLinkToEmail } from "firebase/auth";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -88,8 +89,13 @@ const LandingPage = () => {
   );
 };
 
+
 const LoginPage = () => {
   const navigate = useNavigate();
+  const[email, setEmail] = useState("");
+  const[password, setPassword] = useState("");
+
+ 
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-[#FFF7EC]">
@@ -128,12 +134,19 @@ const LoginPage = () => {
           type="email"
           placeholder="youremail@gmail.com"
           className="w-full p-3 mb-3 rounded-lg border border-gray-300 font-semibold text-center bg-[#FFE5EC]"
+          onChange={(e)=>{
+            setEmail(e.target.value)
+          }}
+          
         />
 
         <input
           type="password"
           placeholder="**********"
           className="w-full p-3 mb-3 rounded-lg border border-gray-300 text-center bg-[#FFE5EC]"
+          onChange={(e)=>{
+            setPassword(e.target.value)
+          }}
         />
 
         <button 
@@ -141,14 +154,47 @@ const LoginPage = () => {
           style={{ borderRadius: "20px",
             width: "70px"
           }}
-          onClick={() => navigate("/home-page")}
-        >
+          onClick={() =>{ 
+            const auth = getAuth();
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    navigate("/home-page")
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+          }}
+      >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
 
 
         <div className="mt-4 text-sm text-gray-700">
-          <input type="checkbox" className="mr-2" />
+          <input type="checkbox" className="mr-2" onClick={()=>{
+            const auth = getAuth();
+            sendSignInLinkToEmail(auth, email, actionCodeSettings)
+              .then(() => {
+                // The link was successfully sent. Inform the user.
+                // Save the email locally so you don't need to ask the user for it again
+                // if they open the link on the same device.
+                alert("email sent");
+                window.localStorage.setItem('emailForSignIn', email);
+                // ...
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                // alert(email)
+                // ...
+              });
+          }} />
           <span className="font-semibold">Forgot your password?</span>
         </div>
 
@@ -165,6 +211,9 @@ const LoginPage = () => {
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const[email, setEmail] = useState("");
+  const[password, setPassword] = useState("");
+
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-[#FFF7EC]">
@@ -202,22 +251,52 @@ const SignUpPage = () => {
 
         <input
           type="email"
+          id="email"
           placeholder="youremail@gmail.com"
           className="w-full p-3 mb-3 rounded-lg border border-gray-300 font-semibold text-center bg-[#FFE5EC]"
+          onChange={(e)=>{
+            setEmail(e.target.value)
+          }}
         />
 
         <input
           type="password"
+          id="pass"
           placeholder="**********"
           className="w-full p-3 mb-3 rounded-lg border border-gray-300 text-center bg-[#FFE5EC]"
+          onChange={(e)=>{
+            setPassword(e.target.value)
+          }}
         />
+        {/* let email={document.getElementById("email").value}; 
+        let password={document.getElementById("pass").value};
+        console.log(email); */}
 
         <button 
           className="w-12 h-12 bg-[#FFAFCC] text-black flex items-center justify-center mx-auto text-2xl"
           style={{ borderRadius: "20px",
             width: "70px"
           }}
-          onClick={() => navigate("/login")}
+          // navigate("/login")
+          onClick={() => {
+
+            const auth = getAuth();
+            console.log(email);
+            console.log(password);
+            createUserWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                // Signed up 
+                navigate("/login")
+                const user = userCredential.user;
+                // ...
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                // ..
+              } )
+            ;}}
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
