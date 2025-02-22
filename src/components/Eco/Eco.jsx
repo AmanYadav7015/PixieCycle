@@ -105,7 +105,7 @@ const Eco = () => {
         {products.map((product) => (
           <div 
             key={product.id} 
-            className="bg-[rgba(255,255,255,0.4)] rounded-lg shadow-lg p-4 flex flex-col items-center transition-transform transform hover:scale-105"
+            className="bg-[rgba(255,255,255,0.4)] rounded-lg shadow-lg p-4 flex flex-col items-center transition-transform transform hover:scale-105 hover:bg-white"
           >
             <img 
               src={product.image} 
