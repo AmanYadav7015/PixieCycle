@@ -29,7 +29,7 @@ const AddPeriod = () => {
     <div className="h-screen flex flex-col items-center justify-center p-4">
       <h2 className="text-3xl font-bold mb-8 text-[#6a4c93]">Add Your Period Here</h2>
       <form onSubmit={handleSubmit} className="bg-[#ffe5ec] p-6 shadow-lg w-150 h-100 border-20 border-[#cdb4db] flex flex-col justify-center">
-        <label className="block mb-2 font-bold font-medium">Start Date:</label>
+        <label className="block mb-2 font-medium">Start Date:</label>
         <input 
           type="date" 
           value={startDate} 
@@ -38,7 +38,7 @@ const AddPeriod = () => {
           required
         />
         
-        <label className="block mb-2 font-bold font-medium">End Date:</label>
+        <label className="block mb-2 font-medium">End Date:</label>
         <input 
           type="date" 
           value={endDate} 
