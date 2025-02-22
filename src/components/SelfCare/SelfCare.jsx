@@ -59,7 +59,6 @@ const SelfCare = () => {
       <div className="p-6 shadow-lg w-250 border-10 border-[#8ecae6] flex flex-col items-center text-center mt-10">
         <h3 className="text-xl font-bold mb-2 text-[#0077b6]">Water Tracker</h3>
 
-        {/* Water Glasses */}
         <div className="flex gap-7 flex-wrap justify-center mt-10 mb-10">
             {glasses.map((_, index) => (
                 <div key={index}>
@@ -76,12 +75,10 @@ const SelfCare = () => {
             ))}
         </div>
 
-        {/* Total Water Drank */}
         <p className="text-lg font-semibold text-[#0077b6] mb-4">
             Total Water Drank: <span className="text-[#023e8a]">{waterIntake * 0.5} L</span>
         </p>
 
-        {/* Add Glass Button */}
         <button 
             onClick={addGlass} 
             className="bg-[#8ecae6] text-white font-bold px-4 py-2 rounded-lg w-1/5 hover:bg-[#bde0fe] transition flex items-center justify-center"
