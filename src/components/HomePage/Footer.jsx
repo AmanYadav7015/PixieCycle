@@ -19,7 +19,7 @@ const Footer = () => {
     { id: "/calendar", icon: faCalendarDays, route: "/calendar" },
     { id: "/add-period", icon: faHeartCirclePlus, route: "/add-period" },
     { id: "/self-care", icon: faHandHoldingHeart, route: "/self-care" },
-    { id: "/analytics-page", icon: faChartSimple, route: "/analytics-page" },
+    { id: "/analysis-page", icon: faChartSimple, route: "/analysis-page" },
     { id: "/eco", icon: faLeaf, route: "/eco" },
   ];
 

@@ -6,7 +6,7 @@ import Navbar from "./components/HomePage/Navbar";
 import Footer from "./components/HomePage/Footer";
 import Calendar from "./components/Calendar/CalendarPage";
 import AddPeriod from "./components/AddPeriod/AddPeriod";
-import AnalyticsPage from "./components/AnalyticsPage/AnalyticsPage";
+import AnalysisPage from "./components/AnalysisPage/AnalysisPage";
 import Eco from "./components/Eco/Eco";
 import SelfCare from "./components/SelfCare/SelfCare";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
@@ -413,7 +413,7 @@ const App = () => {
             <Route path="/calendar" element={<><Calendar/><Footer/></>} />
             <Route path="/add-period" element={<><AddPeriod/><Footer/></>} />
             <Route path="/self-care" element={<><SelfCare/><Footer/></>} />
-            <Route path="/analytics-page" element={<><AnalyticsPage/><Footer/></>} />
+            <Route path="/analysis-page" element={<><AnalysisPage/><Footer/></>} />
             <Route path="/eco" element={<><Eco/><Footer/></>} />
           </Routes>
         </div>

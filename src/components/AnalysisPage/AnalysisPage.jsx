@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AnalyticsPage = () => {
+const AnalysisPage = () => {
   const navigate = useNavigate();
 
   return (
     <div className="h-screen flex flex-col items-center">
-      Analytics
+      Analysis
     </div>
   );
 };
 
-export default AnalyticsPage;
+export default AnalysisPage;

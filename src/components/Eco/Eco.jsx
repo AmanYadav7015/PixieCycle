@@ -4,86 +4,86 @@ import { useNavigate } from "react-router-dom";
 const products = [
   {
     id: 1,
-    name: "Reusable Bamboo Cutlery Set",
+    name: "Menstrual Cups",
     price: "₹499",
-    image: "/default.jpg", 
+    image: "/cup.jpeg", 
     link: "https://www.amazon.in/dp/B08XYZ" 
   },
   {
     id: 2,
-    name: "Organic Cotton Tote Bag",
+    name: "Cloth Pads",
     price: "₹299",
-    image: "/default.jpg",
+    image: "/cloth-pad.jpeg",
     link: "https://www.amazon.in/dp/B07ABC" 
   },
   {
     id: 3,
-    name: "Stainless Steel Straw Set",
+    name: "Organic Cotton Tampons",
     price: "₹199",
-    image: "/default.jpg",
+    image: "/tampon.jpeg",
     link: "https://www.amazon.in/dp/B09LMN"
   },
   {
     id: 4,
-    name: "Biodegradable Toothbrush",
+    name: "Reusable Menstrual Discs",
     price: "₹150",
-    image: "/default.jpg",
+    image: "/disc.jpeg",
     link: "https://www.amazon.in/dp/B012DEF"
   },
   {
     id: 5,
-    name: "Reusable Beeswax Wraps",
+    name: "Menstrual Cups",
     price: "₹599",
-    image: "/default.jpg",
+    image: "/cup.jpeg",
     link: "https://www.amazon.in/dp/B045GH"
   },
   {
     id: 6,
-    name: "Eco-Friendly Water Bottle",
+    name: "Cloth Pads",
     price: "₹799",
-    image: "/default.jpg",
+    image: "/cloth-pad.jpeg",
     link: "https://www.amazon.in/dp/B078JK"
   },
   {
     id: 7,
-    name: "Reusable Bamboo Cutlery Set",
+    name: "Organic Cotton Tampons",
     price: "₹499",
-    image: "/default.jpg", 
+    image: "/tampon.jpeg", 
     link: "https://www.amazon.in/dp/B08XYZ" 
   },
   {
     id: 8,
-    name: "Organic Cotton Tote Bag",
+    name: "Reusable Menstrual Discs",
     price: "₹299",
-    image: "/default.jpg",
+    image: "/disc.jpeg",
     link: "https://www.amazon.in/dp/B07ABC" 
   },
   {
     id: 9,
-    name: "Stainless Steel Straw Set",
+    name: "Menstrual Cups",
     price: "₹199",
-    image: "/default.jpg",
+    image: "/cup.jpeg",
     link: "https://www.amazon.in/dp/B09LMN"
   },
   {
     id: 10,
-    name: "Biodegradable Toothbrush",
+    name: "Cloth Pads",
     price: "₹150",
-    image: "/default.jpg",
+    image: "/cloth-pad.jpeg",
     link: "https://www.amazon.in/dp/B012DEF"
   },
   {
     id: 11,
-    name: "Reusable Beeswax Wraps",
+    name: "Organic Cotton Tampons",
     price: "₹599",
-    image: "/default.jpg",
+    image: "/tampon.jpeg",
     link: "https://www.amazon.in/dp/B045GH"
   },
   {
     id: 12,
-    name: "Eco-Friendly Water Bottle",
+    name: "Reusable Menstrual Discs",
     price: "₹799",
-    image: "/default.jpg",
+    image: "/disc.jpeg",
     link: "https://www.amazon.in/dp/B078JK"
   }
 ];
@@ -115,10 +115,9 @@ const Eco = () => {
             <h2 className="text-lg font-semibold mt-8">{product.name}</h2>
             <p className="text-[#2d6a4f] font-bold text-xl">{product.price}</p>
             <a 
-              href={product.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="mt-4 bg-[#2d6a4f] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700"
+              className="mt-4 bg-[#2d6a4f] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 hover:cursor-pointer"
             >
               View on Amazon
             </a>
