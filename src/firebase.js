@@ -17,7 +17,7 @@ const firebaseConfig = {
 // Connect Firebase Authentication to the Emulator
 
 const actionCodeSettings = {
-  url: 'https://pixie-cycle.vercel.app/login',
+  url: 'https://pixie-cycle.vercel.app/home-page',
   handleCodeInApp: true, 
 };
 
