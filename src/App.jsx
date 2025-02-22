@@ -9,6 +9,7 @@ import AddPeriod from "./components/AddPeriod/AddPeriod";
 import AnalysisPage from "./components/AnalysisPage/AnalysisPage";
 import Eco from "./components/Eco/Eco";
 import SelfCare from "./components/SelfCare/SelfCare";
+import Profile from "./components/Profile";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -415,6 +416,7 @@ const App = () => {
             <Route path="/self-care" element={<><SelfCare/><Footer/></>} />
             <Route path="/analysis-page" element={<><AnalysisPage/><Footer/></>} />
             <Route path="/eco" element={<><Eco/><Footer/></>} />
+            <Route path="/profile" element={<><Profile/><Footer/></>} />
           </Routes>
         </div>
       </div>

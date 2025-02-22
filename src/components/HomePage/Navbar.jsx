@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faBell, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [showNotifications, setShowNotifications] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <>
             <div className="bg-[#FFE5EC] p-4 flex justify-between items-center fixed top-0 h-12 w-full z-50 shadow-md">
-                <button className="text-[#FB6F92]" style={{ fontSize: "25px" }}>
+                <button className="text-[#FB6F92]" 
+                style={{ fontSize: "25px" }}
+                onClick={() => navigate("/profile")}
+            >
                     <FontAwesomeIcon icon={faUser} />
                 </button>
 
