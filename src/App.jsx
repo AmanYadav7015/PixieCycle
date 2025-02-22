@@ -407,7 +407,6 @@ const App = () => {
         <div className="relative z-10">
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            {/* <Route path="/" element={<SignIn />} /> */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/home-page" element={<><Navbar /><HomePage /><Footer /></>} />

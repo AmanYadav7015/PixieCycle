@@ -58,29 +58,38 @@ const SelfCare = () => {
       
       <div className="p-6 shadow-lg w-250 border-10 border-[#8ecae6] flex flex-col items-center text-center mt-10">
         <h3 className="text-xl font-bold mb-2 text-[#0077b6]">Water Tracker</h3>
+
+        {/* Water Glasses */}
         <div className="flex gap-7 flex-wrap justify-center mt-10 mb-10">
-          {glasses.map((_, index) => (
-            <div>
-            <div
-              key={index}
-              className="relative w-10 h-16 cursor-pointer flex items-end justify-center"
-              onClick={() => setWaterIntake(index + 1)}
-            >
-              <div className="absolute bottom-0 w-10 h-16 bg-transparent border-l-4 border-r-4 border-b-8 border-[#a2d2ff] clip-trapezium"></div>
-              <div className={`absolute bottom-0 w-10 transition-all ${index < waterIntake ? 'h-full bg-[#a2d2ff]' : 'h-0'}`}></div>
-              <p className="mb-6">+</p>
-            </div>
-            <p className="text-xs text-[#0077b6] mt-2">500ml</p>
-            </div>
-          ))}
+            {glasses.map((_, index) => (
+                <div key={index}>
+                    <div 
+                        className="relative w-10 h-16 cursor-pointer flex items-end justify-center"
+                        onClick={() => setWaterIntake(index + 1)}
+                    >
+                        <div className="absolute bottom-0 w-10 h-16 bg-transparent border-l-4 border-r-4 border-b-8 border-[#a2d2ff] clip-trapezium"></div>
+                        <div className={`absolute bottom-0 w-10 transition-all ${index < waterIntake ? 'h-full bg-[#a2d2ff]' : 'h-0'}`}></div>
+                        <p className="mb-6">+</p>
+                    </div>
+                    <p className="text-xs text-[#0077b6] mt-2">500ml</p>
+                </div>
+            ))}
         </div>
+
+        {/* Total Water Drank */}
+        <p className="text-lg font-semibold text-[#0077b6] mb-4">
+            Total Water Drank: <span className="text-[#023e8a]">{waterIntake * 0.5} L</span>
+        </p>
+
+        {/* Add Glass Button */}
         <button 
-          onClick={addGlass} 
-          className="bg-[#8ecae6] text-white font-bold px-4 py-2 rounded-lg w-1/5 hover:bg-[#bde0fe] transition flex items-center justify-center"
+            onClick={addGlass} 
+            className="bg-[#8ecae6] text-white font-bold px-4 py-2 rounded-lg w-1/5 hover:bg-[#bde0fe] transition flex items-center justify-center"
         >
-          Add Glass
+            Add Glass
         </button>
-      </div>
+    </div>
+
       
       {/* <div className="p-6 shadow-lg w-full border-10 border-[#ff8fab] mt-20 mb-6 flex flex-col items-center">
         <h2 className="font-bold text-5xl text-[#a53860] mt-2 mb-10">Tips:</h2>

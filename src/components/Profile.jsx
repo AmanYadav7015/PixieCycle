@@ -33,13 +33,13 @@ const Profile = () => {
         <div className="min-h-screen flex justify-center items-center p-6 mb-15">
             <div className="bg-[rgba(255,255,255,0.7)] shadow-lg rounded-xl p-6 w-250 text-center">
                 <div className="relative">
-                    <button className="absolute w-14 h-14 top-0 left-0 bg-[#FB6F92] text-white p-4 rounded-full shadow-md hover:bg-[#FF4D6D] transition"
+                    <button className="absolute w-14 h-14 top-0 left-0 bg-[#FB6F92] text-white p-4 rounded-full shadow-md hover:bg-[#ffc2d1] transition"
                         onClick={() => {navigate("/home-page")}}
                     >
                         <FontAwesomeIcon icon={faHome} />
                     </button>
                     <img src={user.avatar} alt="Profile" className="w-24 h-24 mx-auto rounded-full border-4 border-[#FB6F92]" />
-                    <button className="absolute w-14 h-14 top-0 right-0 bg-[#FB6F92] text-white p-4 rounded-full shadow-md hover:bg-[#FF4D6D] transition">
+                    <button className="absolute w-14 h-14 top-0 right-0 bg-[#FB6F92] text-white p-4 rounded-full shadow-md hover:bg-[#ffc2d1] transition">
                         <FontAwesomeIcon icon={faEdit} />
                     </button>
                 </div>
@@ -68,7 +68,7 @@ const Profile = () => {
                 </div>
 
                 <div className="mt-6 flex flex-col gap-5 items-center">
-                    <button className="w-1/6 h-15 bg-[#FB6F92] text-white py-2 rounded-lg hover:bg-[#FF4D6D] transition">
+                    <button className="w-1/6 h-15 bg-[#FB6F92] text-white py-2 rounded-lg hover:bg-[#ffc2d1] transition">
                         <FontAwesomeIcon icon={faCog} className="mr-2" /> Settings
                     </button>
                     <button 
