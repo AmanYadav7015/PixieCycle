@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup,connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
-  apiKey: "AIzaSyBFE5lmvgIBvwOQjuWl3Jr8QLKr2Zr2zRA",
-  authDomain: "pixiecycle-91448.firebaseapp.com",
-  projectId: "pixiecycle-91448",
-  storageBucket: "pixiecycle-91448.firebasestorage.app",
-  messagingSenderId: "776334094264",
-  appId: "1:776334094264:web:913dd3d3c845ffdd13694d",
-  measurementId: "G-MTVB3ZMZ4R"
+  apiKey: "AIzaSyB_dTIPmZU00oJeALzDwqt1WIUCRc6AxbU",
+  authDomain: "pixiecycle-bd155.firebaseapp.com",
+  projectId: "pixiecycle-bd155",
+  storageBucket: "pixiecycle-bd155.firebasestorage.app",
+  messagingSenderId: "337441092386",
+  appId: "1:337441092386:web:fc439e0450647fce7cab7b",
+  measurementId: "G-Y5WGZEPY0R"
 };
 //forget password
 
